@@ -1,0 +1,361 @@
+.default-container {
+    padding: 20px;
+    font-family: "Segoe UI", sans-serif;
+    position: relative;
+  }
+  
+  .header {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .user-pfp {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .placeholder-tag {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .user-email {
+    font-size: 14px;
+    color: #444;
+  }
+  
+  /* Dropdown under profile */
+.profile-dropdown {
+  position: absolute;
+  top: 60px; /* drops below the profile picture */
+  right: 20px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  min-width: 180px;
+  z-index: 100;
+}
+
+.profile-dropdown button {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  color: #333;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.profile-dropdown button:hover {
+  background: #f2f2f2;
+}
+
+/* Main action buttons */
+.main-options {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.main-options button {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  background: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.main-options button:hover {
+  background: #005a9e;
+}
+
+/* Alert message */
+.login-alert {
+  background: #dff0d8;
+  color: #3c763d;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.profile-dropdown:hover, .user-info:hover{
+  cursor: pointer;
+}
+
+#heading{
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+}
+
+.user-pfp {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.placeholder-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #1877f2; /* or any random color */
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* --- Add Project Form --- */
+.add-project-form {
+  background: #fff;
+  padding: 20px;
+  margin: 30px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.add-project-form input {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.add-project-form button {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.add-project-form button:hover {
+  background: #218838;
+}
+
+/* --- Projects List --- */
+.projects-list {
+  margin: 40px auto;
+  max-width: 900px;
+  text-align: left;
+}
+
+.projects-list h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* Filter */
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.filter input {
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.filter button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #e53935;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.filter button:hover {
+  background: #c62828;
+}
+
+/* Project Cards */
+.projects-list ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.projects-list li {
+  background: #fff;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+.projects-list li:hover {
+  transform: translateY(-3px);
+}
+.projects-list li strong {
+  font-size: 18px;
+  color: #0078d7;
+}
+
+#projects{
+  color: #c083f9;
+  font-size: larger;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#filter{
+  color: rgb(248, 236, 213);
+}
+
+/* Style select same as input */
+.add-project-form select {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  background: white;
+  appearance: none; /* removes default browser arrow style */
+  cursor: pointer;
+}
+
+.add-project-form select {
+  background: white url("data:image/svg+xml;utf8,<svg fill='gray' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 10px center;
+  background-size: 16px;
+}
+
+/* --- Filter Section --- */
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  width: fit-content;
+}
+
+/* Label */
+.filter label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Select (same style as form inputs) */
+.filter select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  background: white;
+  appearance: none;
+  cursor: pointer;
+}
+
+/* Clear button */
+.filter button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #e53935;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.filter button:hover {
+  background: #c62828;
+}
+
+/* --- Filter Section --- */
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0 24px 0;
+  background: #fff;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  width: fit-content;
+}
+
+.filter-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+}
+
+.filter-select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  background: white;
+  appearance: none;
+  cursor: pointer;
+}
+
+.filter-clear {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #e53935;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.filter-clear:hover {
+  background: #c62828;
+}
+
+#no-projects{
+  color: white;
+  font-size: larger;
+}
