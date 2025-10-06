@@ -1,7 +1,7 @@
 // src/App.jsx
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Bg from "./Bg";
+import Bg from "./bg.jsx"
 import Home from "./Home";
 import Auth from "./Authentication/auth"; // your auth page
 import Login from "./Authentication/Login";
