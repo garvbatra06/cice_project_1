@@ -1,6 +1,10 @@
 import { useState } from "react";
-import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-import { auth, googleProvider } from "./firebase"; 
+import {
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  fetchSignInMethodsForEmail,
+} from "firebase/auth";
+import { auth, googleProvider } from "./firebase";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -11,22 +15,28 @@ export default function Login() {
   // Email login
   const handleEmailLogin = async () => {
     try {
+      const methods = await fetchSignInMethodsForEmail(auth, email);
+      if (methods.length === 0) {
+        alert("⚠️ No account found for this email. Please sign up first.");
+        return;
+      }
+
       await signInWithEmailAndPassword(auth, email, password);
       console.log("✅ Logged in with Email");
-      navigate("/default"); // go to Default page
+      navigate("/default");
     } catch (err) {
-      alert(err.message);
+      alert("❌ " + err.message);
     }
   };
 
   // Google login
   const handleGoogleLogin = async () => {
     try {
-      await signInWithPopup(auth, googleProvider);
+      const result = await signInWithPopup(auth, googleProvider);
       console.log("✅ Logged in with Google");
-      navigate("/default"); // go to Default page
+      navigate("/default");
     } catch (err) {
-      alert(err.message);
+      alert("❌ " + err.message);
     }
   };
 
