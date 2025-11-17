@@ -6,24 +6,25 @@ export default function Bg() {
   useEffect(() => {
     const loadScripts = async () => {
       await loadScript("https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js");
-      await loadScript("https://cdn.jsdelivr.net/npm/vanta/dist/vanta.dots.min.js");
+      await loadScript("https://cdn.jsdelivr.net/npm/vanta/dist/vanta.net.min.js");
 
-      VANTA.DOTS({
-        el: vantaRef.current,
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: true,
-        minHeight: 200.0,
-        minWidth: 200.0,
-        scale: 100.0,
-        scaleMobile: 1.0,
-        color: 0x187cc3,         // Neon green dots
-        color2: 0x187cc3,        // Neon cyan connecting lines
-        backgroundColor: 0x0f0f0f, // Almost black background
-        spacing: 100.0,           // Adjust dot spacing
-        showLines: true           // Make it look more “hacker-y”
-    });    
-      
+      if (window.VANTA) {
+        window.VANTA.NET({
+          el: vantaRef.current,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          color: 0x423aa0,
+          backgroundColor: 0x081122,
+          points: 9.00,
+          maxDistance: 0.00,
+          spacing: 20.00
+        });
+      }
     };
 
     loadScripts();

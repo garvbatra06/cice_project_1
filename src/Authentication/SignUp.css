@@ -1,69 +1,227 @@
-/* Signup.css */
+/* SignUp.css - GitHub-inspired Authentication */
+
+/* Page wrapper with GitHub dark background */
+.auth-page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #0d1117;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+}
+
+/* Back to home link */
+.back-to-home {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 100;
+}
+
+.back-to-home a {
+  color: #8b949e;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.back-to-home a:hover {
+  color: #c9d1d9;
+  border-color: #8b949e;
+  background: #21262d;
+}
+
 .auth-container {
-    max-width: 400px;
-    margin: 80px auto;
-    padding: 2rem;
-    background: rgba(20, 20, 35, 0.9); /* dark glassy panel */
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    text-align: center;
-    backdrop-filter: blur(10px);
+  max-width: 440px;
+  width: 90%;
+  padding: 40px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.auth-container h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #c9d1d9;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.auth-subtitle {
+  font-size: 14px;
+  color: #8b949e;
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 12px 16px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #30363d;
+  outline: none;
+  font-size: 14px;
+  background: #0d1117;
+  color: #c9d1d9;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.auth-container input::placeholder {
+  color: #6e7681;
+}
+
+.auth-container input:focus {
+  border-color: #58a6ff;
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 12px 16px;
+  margin-top: 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Primary button (Email signup/login) */
+.auth-container button:first-of-type {
+  background: #238636;
+  color: #ffffff;
+  margin-top: 24px;
+}
+
+.auth-container button:first-of-type:hover {
+  background: #2ea043;
+  box-shadow: 0 0 transparent, 0 0 transparent, 0 3px 9px rgba(0, 0, 0, 0.12);
+}
+
+.auth-container button:first-of-type:active {
+  background: #238636;
+  transform: scale(0.98);
+}
+
+/* Divider */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #6e7681;
+  font-size: 12px;
+  margin: 24px 0 16px 0;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #30363d;
+}
+
+.auth-divider span {
+  padding: 0 16px;
+  font-weight: 500;
+}
+
+/* Google button */
+.auth-container button:nth-of-type(2) {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.auth-container button:nth-of-type(2):hover {
+  background: #21262d;
+  border-color: #8b949e;
+}
+
+.auth-container button:nth-of-type(2):active {
+  background: #0d1117;
+  transform: scale(0.98);
+}
+
+/* Toggle link */
+.auth-toggle {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #30363d;
+  font-size: 14px;
+  color: #8b949e;
+}
+
+.auth-toggle a {
+  color: #58a6ff;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.auth-toggle a:hover {
+  text-decoration: underline;
+  color: #79c0ff;
+}
+
+/* Error message styling */
+.auth-error {
+  background: rgba(218, 54, 51, 0.15);
+  color: #f85149;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 16px;
+  text-align: left;
+  border: 1px solid rgba(248, 81, 73, 0.4);
+}
+
+/* Success message styling */
+.auth-success {
+  background: rgba(35, 134, 54, 0.15);
+  color: #3fb950;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 16px;
+  text-align: left;
+  border: 1px solid rgba(46, 160, 67, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 32px 24px;
+    width: 95%;
   }
-  
-  .auth-container h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #f97316; /* 🔥 orange complement to your blue background */
-    font-weight: 700;
+
+  .back-to-home {
+    top: 16px;
+    left: 16px;
   }
-  
-  .auth-container input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 10px;
-    border: 1px solid #333;
-    outline: none;
-    font-size: 1rem;
-    background: #0f172a;
-    color: #fff;
-    transition: border 0.2s, box-shadow 0.2s;
-  }
-  
-  .auth-container input:focus {
-    border-color: #f97316;
-    box-shadow: 0 0 8px rgba(249, 115, 22, 0.6);
-  }
-  
-  .auth-container button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 12px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    background: linear-gradient(135deg, #f97316, #ea580c);
-    color: #fff;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  
-  .auth-container button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(249, 115, 22, 0.5);
-  }
-  
-  .auth-container button:active {
-    transform: scale(0.98);
-  }
-  
-  .auth-container button:nth-of-type(2) {
-    background: linear-gradient(135deg, #3b82f6, #2563eb); /* Google button in blue */
-    margin-top: 10px;
-  }
-  
-  .auth-container button:nth-of-type(2):hover {
-    box-shadow: 0 6px 15px rgba(59, 130, 246, 0.5);
-  }
-  
+}

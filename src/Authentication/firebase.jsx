@@ -1,24 +1,21 @@
-// firebase.jsx
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
-import { getFirestore } from "firebase/firestore"; // 👈 added
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDGMfZOmwyZuLCezGHk_aS0iZf70HCgTVg",
-  authDomain: "hackmate-72e42.firebaseapp.com",
-  projectId: "hackmate-72e42",
-  storageBucket: "hackmate-72e42.firebasestorage.app",
-  messagingSenderId: "845544652345",
-  appId: "1:845544652345:web:9b6806f3629ab6f3f4d7e8",
-  measurementId: "G-1XHD4VTLFG"
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  measurementId: import.meta.env.VITE_MEASUREMENT_ID,
 };
 
-// Initialize app ONCE here
 const app = initializeApp(firebaseConfig);
 
-// Export initialized services
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
-export const db = getFirestore(app); // 👈 added
+export const db = getFirestore(app);
 
 export default app;

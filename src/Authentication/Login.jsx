@@ -6,6 +6,7 @@ import {
 } from "firebase/auth";
 import { auth, googleProvider } from "./firebase";
 import { useNavigate } from "react-router-dom";
+import "./SignUp.css";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -41,20 +42,42 @@ export default function Login() {
   };
 
   return (
-    <div className="auth-container">
-      <h2>Login</h2>
-      <input
-        type="email"
-        placeholder="Email"
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={handleEmailLogin}>Login with Email</button>
-      <button onClick={handleGoogleLogin}>Continue with Google</button>
+    <div className="auth-page-wrapper">
+      <div className="back-to-home">
+        <a onClick={() => navigate("/")}>← Back to Home</a>
+      </div>
+
+      <div className="auth-container">
+        <h2>Sign in to HackMate</h2>
+        <p className="auth-subtitle">Welcome back! Enter your credentials to continue</p>
+        
+        <input
+          type="email"
+          placeholder="Email address"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        
+        <button onClick={handleEmailLogin}>Sign in</button>
+        
+        <div className="auth-divider">
+          <span>or</span>
+        </div>
+        
+        <button onClick={handleGoogleLogin}>
+          <span>Continue with Google</span>
+        </button>
+
+        <div className="auth-toggle">
+          New to HackMate? <a onClick={() => navigate("/signup")}>Create an account</a>
+        </div>
+      </div>
     </div>
   );
 }

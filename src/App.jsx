@@ -1,18 +1,23 @@
 // src/App.jsx
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Bg from "./bg.jsx"
 import Home from "./Home";
-import Auth from "./Authentication/auth"; // your auth page
+import Auth from "./Authentication/auth";
 import Login from "./Authentication/Login";
 import Signup from "./Authentication/SignUp";
 import Default from "./Default";
 
 export default function App() {
+  const location = useLocation();
+  
+  // Only show Vanta.js background on Home page
+  const showBackground = location.pathname === "/";
+
   return (
     <div className="app">
-      {/* Background */}
-      <Bg />
+      {/* Background - only on home page */}
+      {showBackground && <Bg />}
 
       {/* Foreground Content */}
       <div className="content">

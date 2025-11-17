@@ -1,27 +1,164 @@
-.auth{
+/* auth.css - GitHub-inspired Auth Selection Page */
+
+/* Page wrapper with GitHub dark background */
+.auth-page-wrapper {
+  min-height: 100vh;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #0d1117;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+}
+
+/* Back to home link */
+.back-to-home {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 100;
+}
+
+.back-to-home a {
+  color: #8b949e;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.back-to-home a:hover {
+  color: #c9d1d9;
+  border-color: #8b949e;
+  background: #21262d;
+}
+
+.auth-container {
+  max-width: 440px;
+  width: 90%;
+  padding: 40px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   text-align: center;
-  margin-top: 25%;
+  position: relative;
+  z-index: 10;
+}
+
+.auth-logo {
+  font-size: 32px;
+  font-weight: 600;
+  color: #c9d1d9;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.auth-container h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #c9d1d9;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.auth-subtitle {
+  font-size: 14px;
+  color: #8b949e;
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+.auth-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
 }
 
 .auth-button {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #f97316, #ea580c);
-  color: white;
-  padding: 20px 40px;
+  width: 100%;
+  padding: 14px 20px;
   border: none;
-  border-radius: 8px;
-  font-size: 24px;
+  border-radius: 6px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  margin: 30px;
+  transition: all 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-.auth-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+/* Primary button (Sign Up) */
+.auth-button.primary {
+  background: #238636;
+  color: #ffffff;
+}
+
+.auth-button.primary:hover {
+  background: #2ea043;
+  box-shadow: 0 0 transparent, 0 0 transparent, 0 3px 9px rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
+}
+
+.auth-button.primary:active {
+  background: #238636;
+  transform: scale(0.98);
+}
+
+/* Secondary button (Login) */
+.auth-button.secondary {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+}
+
+.auth-button.secondary:hover {
+  background: #21262d;
+  border-color: #8b949e;
+  transform: translateY(-1px);
+}
+
+.auth-button.secondary:active {
+  background: #0d1117;
+  transform: scale(0.98);
+}
+
+.auth-footer-text {
+  font-size: 12px;
+  color: #6e7681;
+  line-height: 1.5;
+  padding-top: 24px;
+  border-top: 1px solid #30363d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 32px 24px;
+    width: 95%;
+  }
+
+  .back-to-home {
+    top: 16px;
+    left: 16px;
+  }
+
+  .auth-logo {
+    font-size: 28px;
+  }
+
+  .auth-button {
+    padding: 12px 18px;
+    font-size: 15px;
+  }
 }
