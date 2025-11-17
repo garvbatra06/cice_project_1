@@ -48,7 +48,7 @@ export default function Login() {
       </div>
 
       <div className="auth-container">
-        <h2>Sign in to HackMate</h2>
+        <h2>Sign in to MyHustl</h2>
         <p className="auth-subtitle">Welcome back! Enter your credentials to continue</p>
         
         <input
@@ -75,7 +75,7 @@ export default function Login() {
         </button>
 
         <div className="auth-toggle">
-          New to HackMate? <a onClick={() => navigate("/signup")}>Create an account</a>
+          New to MyHustl? <a onClick={() => navigate("/signup")}>Create an account</a>
         </div>
       </div>
     </div>

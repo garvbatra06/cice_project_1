@@ -11,8 +11,8 @@ export default function Auth() {
       </div>
 
       <div className="auth-container">
-        <div className="auth-logo">⚡ HackMate</div>
-        <h2>Welcome to HackMate</h2>
+        <div className="auth-logo">⚡ MyHustl</div>
+        <h2>Welcome to MyHustl</h2>
         <p className="auth-subtitle">Choose how you'd like to get started</p>
         
         <div className="auth-buttons">
@@ -25,7 +25,7 @@ export default function Auth() {
         </div>
 
         <div className="auth-footer-text">
-          By continuing, you agree to HackMate's Terms of Service and Privacy Policy
+          By continuing, you agree to MyHustl's Terms of Service and Privacy Policy
         </div>
       </div>
     </div>

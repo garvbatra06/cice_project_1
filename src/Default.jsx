@@ -353,7 +353,7 @@ export default function Default() {
         )}
       </div>
 
-      <h1 id="heading">Welcome to HackMate 🎉</h1>
+      <h1 id="heading">Welcome to MyHustl 🎉</h1>
 
       {showAlert && (
         <div className="login-alert">You're logged in successfully.</div>

@@ -10,7 +10,7 @@ export default function Home() {
     <div className="home-wrapper">
       {/* GitHub-Style Navigation Bar */}
       <nav className="navbar">
-        <div className="logo">HackMate</div>
+        <div className="logo">MyHustl</div>
         
         <button 
           className="menu-toggle" 
@@ -45,7 +45,7 @@ export default function Home() {
 
           <div className="actions">
             <button className="btn" onClick={() => navigate("/auth")}>
-              Sign up for HackMate →
+              Sign up for MyHustl →
             </button>
             <button className="btn btn-outline" onClick={() => navigate("/default")}>
               Explore projects
@@ -187,7 +187,7 @@ export default function Home() {
         </div>
 
         <div className="footer-bottom">
-          <p>© 2024 HackMate, Inc. Terms · Privacy · Sitemap</p>
+          <p>© 2025 MyHustl, Inc. Terms · Privacy · Sitemap</p>
         </div>
       </footer>
     </div>
